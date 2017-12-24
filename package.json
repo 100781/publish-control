@@ -1,0 +1,21 @@
+{
+  "name": "wp-publish-control",
+  "version": "1.0.0",
+  "description": "WordPress Plugin: Provides a confirmation dialog upon content publishing.",
+  "main": "publish-control.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.foundry81.com/wordpress/publish-control"
+  },
+  "keywords": [
+    "wordpress",
+    "publish",
+    "dialog",
+    "confirm"
+  ],
+  "author": "Matthew F. Fox",
+  "license": "GPL-2.0"
+}
