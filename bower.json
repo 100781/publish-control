@@ -1,0 +1,27 @@
+{
+  "name": "wp-publish-control",
+  "description": "WordPress Plugin: Provides a confirmation dialog upon content publishing.",
+  "main": "publish-control.php",
+  "authors": [
+    "Matthew F. Fox"
+  ],
+  "license": "GPL-2.0",
+  "keywords": [
+    "wordpress",
+    "publish",
+    "dialog",
+    "confirm"
+  ],
+  "homepage": "https://publishcontrol.foundry81.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "icono": "^1.3.0"
+  }
+}

@@ -1,0 +1,124 @@
+@import "partials/color";
+@import "partials/type";
+
+.f81-msgbox-mask {
+    background: rgba(0,0,0,.5);
+    bottom: 0;
+    left:0;
+    margin:0;
+    opacity:0;
+    padding:0;
+    position:fixed;
+    right: 0;
+    top: 0;
+    transition: all .3s linear;
+    visibility: hidden;
+    z-index:10000;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.f81-msgbox {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    opacity:0;
+    padding: 15px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all .3s linear;
+    visibility: hidden;
+    z-index: 10000;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        .messagebox-container {
+            transform: translateY(0);
+            transition: all .3s linear;
+        }
+    }
+}
+
+.messagebox-container {
+    background: #ffffff;
+    box-shadow: 0px 10px 26px -2px rgba(0,0,0,0.33);
+    width: auto;
+    box-sizing: border-box;
+    max-width: 500px;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(-40px);
+    transition: all .3s linear;
+}
+
+.msgbox-title {
+    background: #ffffff;
+    border-bottom: 1px solid #EEEEEE;
+    color:#616161;
+    display: block;
+    font-family: $fs-text;
+    font-size: 1.4rem;
+    font-weight:300;
+    padding:15px;
+    i {
+        color: #616161;
+    }
+}
+
+.msgbox-message {
+    color:#455A64;
+    font-family: $fs-text;
+    font-size: 1rem;
+    font-weight:400;
+    display: block;
+    padding: 30px 15px;
+}
+
+.msgbox-buttons {
+    display: block;
+    .msg-button {
+        border: 0;
+        border-radius: 0;
+        box-sizing: border-box;
+        color: #fafafa;
+        cursor: pointer;
+        font-family: $fs-text;
+        font-size: 1.2rem;
+        font-weight: 300;
+        padding: 10px;
+        position: relative;
+        transition: background .3s linear;
+        width: 50%;
+        &:active {
+            top: 1px;
+        }
+        &:focus {
+            outline: none;
+        }
+        &.ok {
+            background: $col-ok;
+            i {
+                color: darken($col-ok, 20);
+                margin-right: 5px;
+            }
+            &:hover {
+                background: lighten($col-ok, 5);
+            }
+        }
+        &.cancel {
+            background: $col-cancel;
+            i {
+                color: darken($col-cancel, 20);
+                margin-right: 5px;
+            }
+            &:hover {
+                background: lighten($col-cancel, 5);
+            }
+        }
+    }
+}
