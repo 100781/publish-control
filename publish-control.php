@@ -51,7 +51,7 @@ OUTPUT;
  * Register/enqueue Javascript.
  */
 function publish_control_admin_scripts() {
-	wp_register_script('f81-msgbox', plugin_dir_url( __FILE__ ) . 'scripts/lib/jquery.f81.msgbox.js', array('jquery'), '1.0.0', true);
+	wp_register_script('f81-msgbox', plugin_dir_url( __FILE__ ) . 'scripts/lib/jquery.f81.msgbox.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('f81-msgbox');
 }
 
@@ -59,7 +59,7 @@ function publish_control_admin_scripts() {
  * Register/enqueue CSS.
  */
 function publish_control_admin_styles() {
-	wp_register_style( 'publish-control-styles',  plugin_dir_url( __FILE__ ) . 'style/publish-control.css' );
+	wp_register_style( 'publish-control-styles',  plugin_dir_url( __FILE__ ) . 'style/publish-control.min.css' );
 	wp_enqueue_style( 'publish-control-styles' );
 	wp_register_style( 'icono',  plugin_dir_url( __FILE__ ) . 'style/lib/icono.min.css' );
 	wp_enqueue_style( 'icono' );

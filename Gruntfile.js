@@ -1,6 +1,6 @@
 'use strict';
 /**
- * PostCSS task-specific processors
+ * PostCSS task-specific processors.
  */
 var processors_bundle = [
     require('cssnano')
@@ -12,7 +12,7 @@ var processors_main = [
 ];
 
 /**
- * Grunt configuration
+ * Grunt configuration.
  */
 module.exports = function(grunt) {
     grunt.initConfig({
@@ -51,8 +51,7 @@ module.exports = function(grunt) {
             },
             my_target: {
                 files: {
-                    'scripts/publish-control.min.js': ['scripts/publish-control.js'],
-                    'scripts/lib/jquery.f81.msgbox.min.js': ['scripts/jquery.f81.msgbox.js']
+                    'scripts/lib/jquery.f81.msgbox.min.js': ['scripts/lib/jquery.f81.msgbox.js']
                 }
             }
         },
@@ -100,9 +99,6 @@ module.exports = function(grunt) {
             files: ['package.json', 'bower.json']
         },
         version: {
-            options: {
-
-            },
             app_major: {
                 options: {
                     release: 'major'
@@ -130,10 +126,9 @@ module.exports = function(grunt) {
         }
     });
 
-    // plugins
+    // Plugins.
     grunt.loadNpmTasks('grunt-bowercopy');
     grunt.loadNpmTasks('grunt-build-number');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -141,7 +136,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-version');
 
-    // tasks
+    // Tasks.
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('app-build', ['sass', 'postcss',  'concat', 'cssmin', 'uglify', 'buildnumber']);
+    grunt.registerTask('plugin-build', ['sass', 'postcss', 'cssmin', 'uglify', 'buildnumber']);
 };
