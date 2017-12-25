@@ -8,7 +8,7 @@ var processors_bundle = [
 var processors_main = [
     require('pixrem')(),
     require('autoprefixer')({browsers: 'last 2 versions'}),
-    require('cssnano')()
+    require('cssnano')({ "safe": true })
 ];
 
 /**
@@ -59,6 +59,7 @@ module.exports = function(grunt) {
             main: {
                 options:{
                     inline: false,
+                    zindex: false,
                     annotation: 'style/maps',
                     processors: processors_main
                 },

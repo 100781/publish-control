@@ -22,9 +22,10 @@ function publish_control(){
 var publishControl = true;
 $("form#post").submit(function(e){
 	var pubButton = $('#publish');
-	if ($(this).find("input[type=submit]:focus").val() == "Publish"){
-		if (publishControl === true) e.preventDefault();
-		$.f81msgBox({
+	if (pubButton.val() === "Publish"){
+		if (publishControl === true){
+		    e.preventDefault();
+		    		$.f81msgBox({
 			success: function (result) {
 				if (result === "Publish"){
 					publishControl = false;
@@ -39,6 +40,7 @@ $("form#post").submit(function(e){
 			buttons: [{ value: "Cancel", classname: "cancel", prefix: "<i class='icono-cross'></i>"}, { value: "Publish", classname: "ok", prefix: "<i class='icono-check'></i>"}],
 			modal: true
 		});
+		}
 	}
 });
 </script>

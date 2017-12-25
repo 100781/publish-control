@@ -13,7 +13,7 @@
     top: 0;
     transition: all .3s linear;
     visibility: hidden;
-    z-index:10000;
+    z-index: 1000;
     &.active {
         opacity: 1;
         visibility: visible;
@@ -33,7 +33,7 @@
     top: 0;
     transition: all .3s linear;
     visibility: hidden;
-    z-index: 10000;
+    z-index: 1000;
     &.active {
         opacity: 1;
         visibility: visible;
@@ -90,6 +90,7 @@
         font-family: $fs-text;
         font-size: 1.2rem;
         font-weight: 300;
+        min-width: 200px;
         padding: 10px;
         position: relative;
         transition: background .3s linear;
