@@ -25,5 +25,5 @@
   "dependencies": {
     "icono": "^1.3.0"
   },
-  "build": "8"
+  "build": "9"
 }

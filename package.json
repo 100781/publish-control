@@ -35,5 +35,5 @@
     "grunt-version": "^1.2.1",
     "pixrem": "^4.0.1"
   },
-  "build": "8"
+  "build": "9"
 }

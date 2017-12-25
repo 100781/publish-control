@@ -1,7 +1,7 @@
 <div class="wrap">
 	<h1>Publish Control</h1>
 	<form method="POST">
-		<input type="hidden" name="action" value="update">
+        <?php wp_nonce_field( 'settings_' . get_current_user_id()); ?>
 		<table class="form-table">
 			<tbody>
 				<tr>

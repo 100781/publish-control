@@ -10,6 +10,36 @@ License: GPL2
 */
 
 /**
+ * Activation hook.
+ * Add default settings to wp_options table.
+ */
+function publish_control_activation() {
+	if(!get_option('pubcontrol_posttypes')){
+		update_option('pubcontrol_posttypes', 'post,page');
+	}
+	if(!get_option('pubcontrol_message')){
+		update_option('pubcontrol_message', 'Are you sure you want to publish this piece of content?');
+	}
+}
+
+/**
+ * Deactivation hook.
+ * Do nothing.
+ */
+function publish_control_deactivation() {
+
+}
+
+/**
+ * Uninstall hook.
+ * Removes Publish Control settings from wp_options table.
+ */
+function publish_control_uninstall() {
+	delete_option('pubcontrol_posttypes');
+	delete_option('pubcontrol_message');
+}
+
+/**
  * Inject Publish Control Javascript in selected page.
  */
 function publish_control(){
@@ -79,7 +109,7 @@ function publish_control_admin_menu() {
  * Save updated settings to wp_options table, display settings page.
  */
 function publish_control_settings() {
-	if (isset($_POST['action'])){
+	if ((isset($_POST['_wpnonce']) && (wp_verify_nonce( $_POST['_wpnonce'], 'settings_' . get_current_user_id() )))) {
 		if (isset($_POST['pubcontrol-message'])) {
 			update_option('pubcontrol_message', $_POST['pubcontrol-message']);
 		}
@@ -112,3 +142,10 @@ add_action('admin_footer', 'publish_control');
 add_action('admin_enqueue_scripts', 'publish_control_admin_styles');
 add_action('admin_enqueue_scripts', 'publish_control_admin_scripts');
 add_action('admin_menu', 'publish_control_admin_menu');
+
+/**
+ * Activation, deactivation, uninstall hooks.
+ */
+register_activation_hook(__FILE__, 'publish_control_activation');
+register_deactivation_hook(__FILE__, 'publish_control_deactivation');
+register_uninstall_hook(__FILE__, 'publish_control_uninstall');
