@@ -40,7 +40,7 @@ function publish_control_uninstall() {
 }
 
 /**
- * Inject Publish Control Javascript in selected page.
+ * Inject Publish Control Javascript in "add" page.
  */
 function publish_control(){
 	$screen = get_current_screen();
@@ -98,7 +98,7 @@ function publish_control_admin_styles() {
 }
 
 /**
- * Add Post Control submenu to Settings menu.
+ * Add Publish Control submenu to Settings menu.
  */
 function publish_control_admin_menu() {
 	add_submenu_page( 'options-general.php', 'Publish Control', 'Publish Control',
