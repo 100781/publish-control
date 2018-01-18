@@ -27,6 +27,7 @@
     "cssnano": "^3.10.0",
     "grunt-bowercopy": "^1.2.4",
     "grunt-build-number": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.3.0",
@@ -35,5 +36,5 @@
     "grunt-version": "^1.2.1",
     "pixrem": "^4.0.1"
   },
-  "build": "9"
+  "build": "10"
 }

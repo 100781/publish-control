@@ -45,6 +45,39 @@ module.exports = function(grunt) {
                 }
             }
         },
+        copy: {
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        src: ['LICENSE.txt', 'readme.txt', 'publish-control.php', 'publish-control-settings.php'],
+                        dest: 'dist/',
+                        filter: 'isFile'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'scripts/lib',
+                        src: ['jquery.f81.msgbox.min.js'],
+                        dest: 'dist/scripts/lib',
+                        filter: 'isFile'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'style',
+                        src: ['publish-control.min.css'],
+                        dest: 'dist/style',
+                        filter: 'isFile'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'style/lib',
+                        src: ['icono.min.css'],
+                        dest: 'dist/style/lib',
+                        filter: 'isFile'
+                    }
+                ],
+            },
+        },
         uglify: {
             options: {
                 banner: '<%= banner %>'
@@ -130,8 +163,9 @@ module.exports = function(grunt) {
     // Plugins.
     grunt.loadNpmTasks('grunt-bowercopy');
     grunt.loadNpmTasks('grunt-build-number');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-postcss');
@@ -139,5 +173,5 @@ module.exports = function(grunt) {
 
     // Tasks.
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('plugin-build', ['sass', 'postcss', 'cssmin', 'uglify', 'buildnumber']);
+    grunt.registerTask('plugin-build', ['sass', 'postcss', 'cssmin', 'uglify', 'buildnumber', 'copy']);
 };
