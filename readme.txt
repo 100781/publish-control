@@ -37,9 +37,13 @@ OR
 == Frequently Asked Questions ==
 If you have a question, please ask via the WordPress forums.
 
+== Screenshots ==
+
+1. The PublishControl dialog appears when you attempt to publish a new piece of content.
+
 == Changelog ==
 
-= 1.0 =
+= Version 1.0 =
 *Release Date - 24 December 2017*
 
 * Initial release.
