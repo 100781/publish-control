@@ -16,7 +16,7 @@
 						$postTypesSet = get_option( 'pubcontrol_posttypes' );
 						foreach ( $postTypes as $type ) {
 							$checked = ( in_array( $type, explode( ",", $postTypesSet ) ) ? "checked" : "" );
-							print "<input type=\"checkbox\" name=\"pubcontrol-posttypes[]\" id=\"posttype-{$type}\" value=\"{$type}\" {$checked}>{$type}</input><br>";
+							print "<input type=\"checkbox\" name=\"pubcontrol-posttypes[]\" id=\"posttype-" . esc_attr( $type ) . "\" value=" . esc_attr( $type ) . " {$checked}>" . esc_html( $type ) . "</input><br>";
 						}
 						?>
                         <br>
@@ -30,7 +30,7 @@
                     <fieldset>
                         <legend class="screen-reader-text"><span>Publish Control Message</span></legend>
                         <textarea class="large-text code" rows="10" cols="50" name="pubcontrol-message"
-                                  id="pubcontrol-message"><?php print get_option( 'pubcontrol_message' ); ?></textarea>
+                                  id="pubcontrol-message"><?php print esc_textarea( get_option( 'pubcontrol_message' ) ); ?></textarea>
                     </fieldset>
                 </td>
             </tr>

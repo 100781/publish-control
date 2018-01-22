@@ -44,6 +44,6 @@ If you have a question, please ask via the WordPress forums.
 == Changelog ==
 
 = Version 1.0 =
-*Release Date - 24 December 2017*
+*Release Date - 21 January 2018*
 
 * Initial release.
